@@ -352,6 +352,33 @@ var formatTests = []FormatTest{
 	{LocaleSlSI, time.Date(2013, 5, 13, 0, 0, 0, 0, time.UTC), "2 Jan 2006", "13 maj 2013"},
 	{LocaleSlSI, time.Date(0, 5, 1, 0, 0, 0, 0, time.UTC), "January", "maj"},
 	{LocaleSlSI, time.Date(0, 5, 13, 0, 0, 0, 0, time.UTC), "2 January", "13 maj"},
+
+	{LocaleHeIL, time.Date(2013, 9, 3, 0, 0, 0, 0, time.UTC), "January 2006 2", "ספטמבר 2013 3"},
+	{LocaleHeIL, time.Date(2013, 9, 4, 0, 0, 0, 0, time.UTC), "January 2006 2", "ספטמבר 2013 4"},
+	{LocaleHeIL, time.Date(2013, 10, 3, 0, 0, 0, 0, time.UTC), "January 2006 2", "אוקטובר 2013 3"},
+	{LocaleHeIL, time.Date(2013, 11, 3, 0, 0, 0, 0, time.UTC), "January 2006 2", "נובמבר 2013 3"},
+	{LocaleHeIL, time.Date(2013, 5, 13, 0, 0, 0, 0, time.UTC), "Jan 2006 2", "מאי 2013 13"},
+	{LocaleHeIL, time.Date(2013, 5, 13, 0, 0, 0, 0, time.UTC), "January 2006 2", "מאי 2013 13"},
+	{LocaleHeIL, time.Date(0, 5, 1, 0, 0, 0, 0, time.UTC), "January", "מאי"},
+	{LocaleHeIL, time.Date(0, 5, 13, 0, 0, 0, 0, time.UTC), "January 2", "מאי 13"},
+
+	{LocaleArAE, time.Date(2013, 9, 3, 0, 0, 0, 0, time.UTC), "Mon، 2 Jan، 2006", "الثلاثاء، 3 سبتمبر، 2013"},
+	{LocaleArAE, time.Date(2013, 9, 4, 0, 0, 0, 0, time.UTC), "Monday، 2 January، 2006", "الأربعاء، 4 سبتمبر، 2013"},
+	{LocaleArAE, time.Date(2013, 10, 3, 0, 0, 0, 0, time.UTC), "Mon، 2 Jan، 2006", "الخميس، 3 أكتوبر، 2013"},
+	{LocaleArAE, time.Date(2013, 11, 3, 0, 0, 0, 0, time.UTC), "Monday، 2 January، 2006", "الأحد، 3 نوفمبر، 2013"},
+	{LocaleArAE, time.Date(2013, 5, 13, 0, 0, 0, 0, time.UTC), "2 Jan، 2006", "13 مايو، 2013"},
+	{LocaleArAE, time.Date(2013, 5, 13, 0, 0, 0, 0, time.UTC), "2 January، 2006", "13 مايو، 2013"},
+	{LocaleArAE, time.Date(0, 5, 1, 0, 0, 0, 0, time.UTC), "January", "مايو"},
+	{LocaleArAE, time.Date(0, 5, 13, 0, 0, 0, 0, time.UTC), "2 January", "13 مايو"},
+
+	{LocaleHiIN, time.Date(2013, 5, 3, 0, 0, 0, 0, time.UTC), "2 January 2006", "3 मई 2013"},
+	{LocaleHiIN, time.Date(2013, 5, 4, 0, 0, 0, 0, time.UTC), "2 Jan 2006", "4 मई 2013"},
+	{LocaleHiIN, time.Date(2013, 5, 3, 0, 0, 0, 0, time.UTC), "January 02 2006", "मई 03 2013"},
+	{LocaleHiIN, time.Date(2013, 5, 3, 0, 0, 0, 0, time.UTC), "Jan 2 2006", "मई 3 2013"},
+	{LocaleHiIN, time.Date(2013, 5, 13, 0, 0, 0, 0, time.UTC), "2006. 2 January", "2013. 13 मई"},
+	{LocaleHiIN, time.Date(2013, 5, 13, 0, 0, 0, 0, time.UTC), "2006 Jan 2", "2013 मई 13"},
+	{LocaleHiIN, time.Date(0, 5, 1, 0, 0, 0, 0, time.UTC), "January", "मई"},
+	{LocaleHiIN, time.Date(0, 5, 13, 0, 0, 0, 0, time.UTC), "2 January", "13 मई"},
 }
 
 func TestFormat(t *testing.T) {

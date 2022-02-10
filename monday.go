@@ -48,6 +48,9 @@ var internalFormatFuncs = map[Locale]internalFormatFunc{
 	LocaleCsCZ: createCommonFormatFunc(LocaleCsCZ),
 	LocaleSlSI: createCommonFormatFunc(LocaleSlSI),
 	LocaleLtLT: createCommonFormatFuncWithGenitive(LocaleLtLT),
+	LocaleHeIL: createCommonFormatFunc(LocaleHeIL),
+	LocaleArAE: createCommonFormatFunc(LocaleArAE),
+	LocaleHiIN: createCommonFormatFunc(LocaleHiIN),
 }
 
 // internalParseFunc is a preprocessor for default time.ParseInLocation func
@@ -93,6 +96,9 @@ var internalParseFuncs = map[Locale]internalParseFunc{
 	LocaleCsCZ: createCommonParseFunc(LocaleCsCZ),
 	LocaleSlSI: createCommonParseFunc(LocaleSlSI),
 	LocaleLtLT: createCommonParsetFuncWithGenitive(LocaleLtLT),
+	LocaleHeIL: createCommonParseFunc(LocaleHeIL),
+	LocaleArAE: createCommonParseFunc(LocaleArAE),
+	LocaleHiIN: createCommonParseFunc(LocaleHiIN),
 }
 
 var knownDaysShort = map[Locale]map[string]string{}           // Mapping for 'Format', days of week, short form
@@ -365,6 +371,24 @@ func fillKnownWords() {
 	fillKnownMonthsShort(shortMonthNamesLtLT, LocaleLtLT)
 	fillKnownMonthsGenitiveLong(longMonthNamesGenitiveLtLT, LocaleLtLT)
 	fillKnownMonthsGenitiveShort(shortMonthNamesGenitiveLtLT, LocaleLtLT)
+
+	// He_IL: Hebrew (Israel)
+	fillKnownDaysLong(longDayNamesHeIL, LocaleHeIL)
+	fillKnownDaysShort(shortDayNamesHeIL, LocaleHeIL)
+	fillKnownMonthsLong(longMonthNamesHeIL, LocaleHeIL)
+	fillKnownMonthsShort(shortMonthNamesHeIL, LocaleHeIL)
+
+	// Ar_AE: Arabic (United Arab Emirates)
+	fillKnownDaysLong(longDayNamesArAE, LocaleArAE)
+	fillKnownDaysShort(shortDayNamesArAE, LocaleArAE)
+	fillKnownMonthsLong(longMonthNamesArAE, LocaleArAE)
+	fillKnownMonthsShort(shortMonthNamesArAE, LocaleArAE)
+
+	// Hi_IN: Hindi (India)
+	fillKnownDaysLong(longDayNamesHiIN, LocaleHiIN)
+	fillKnownDaysShort(shortDayNamesHiIN, LocaleHiIN)
+	fillKnownMonthsLong(longMonthNamesHiIN, LocaleHiIN)
+	fillKnownMonthsShort(shortMonthNamesHiIN, LocaleHiIN)
 }
 
 func fill(src map[string]string, dest map[Locale]map[string]string, locale Locale) {
