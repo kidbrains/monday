@@ -256,6 +256,27 @@ const (
 	DefaultFormatLtLTShort    = "2006-01-02"
 	DefaultFormatLtLTDateTime = "2006-01-02, 15:04"
 	DefaultFormatLtLTTime     = "15:04"
+
+	DefaultFormatHeILFull     = "Monday, 2 January 2006" // Hebrew (Israel)
+	DefaultFormatHeILLong     = "January 2006 2"
+	DefaultFormatHeILMedium   = "Jan 2006 2"
+	DefaultFormatHeILShort    = "2.1.2006"
+	DefaultFormatHeILDateTime = "2.1.2006, 15:04"
+	DefaultFormatHeILTime     = "15:04"
+
+	DefaultFormatArAEFull     = "Monday، 2 January، 2006" // Arabic (United Arab Emirates)
+	DefaultFormatArAELong     = "2 January، 2006"
+	DefaultFormatArAEMedium   = "2 Jan، 2006"
+	DefaultFormatArAEShort    = "2/1/2006"
+	DefaultFormatArAEDateTime = "2/1/2006 15:04"
+	DefaultFormatArAETime     = "15:04"
+
+	DefaultFormatHiINFull     = "Monday، 2 January 2006" // Hindi (India)
+	DefaultFormatHiINLong     = "2 January 2006"
+	DefaultFormatHiINMedium   = "2 Jan 2006"
+	DefaultFormatHiINShort    = "2/1/2006"
+	DefaultFormatHiINDateTime = "2/1/2006, 15:04"
+	DefaultFormatHiINTime     = "15:04"
 )
 
 // FullFormatsByLocale maps locales to the'full' date formats for all
@@ -297,6 +318,9 @@ var FullFormatsByLocale = map[Locale]string{
 	LocaleCsCZ: DefaultFormatCsCZFull,
 	LocaleUkUA: DefaultFormatUkUAFull,
 	LocaleLtLT: DefaultFormatLtLTFull,
+	LocaleHeIL: DefaultFormatHeILFull,
+	LocaleArAE: DefaultFormatArAEFull,
+	LocaleHiIN: DefaultFormatHiINFull,
 }
 
 // LongFormatsByLocale maps locales to the 'long' date formats for all
@@ -338,6 +362,9 @@ var LongFormatsByLocale = map[Locale]string{
 	LocaleCsCZ: DefaultFormatCsCZLong,
 	LocaleUkUA: DefaultFormatUkUALong,
 	LocaleLtLT: DefaultFormatLtLTLong,
+	LocaleHeIL: DefaultFormatHeILLong,
+	LocaleArAE: DefaultFormatArAELong,
+	LocaleHiIN: DefaultFormatHiINLong,
 }
 
 // MediumFormatsByLocale maps locales to the 'medium' date formats for all
@@ -379,6 +406,9 @@ var MediumFormatsByLocale = map[Locale]string{
 	LocaleCsCZ: DefaultFormatCsCZMedium,
 	LocaleUkUA: DefaultFormatUkUAMedium,
 	LocaleLtLT: DefaultFormatLtLTMedium,
+	LocaleHeIL: DefaultFormatHeILMedium,
+	LocaleArAE: DefaultFormatArAEMedium,
+	LocaleHiIN: DefaultFormatHiINMedium,
 }
 
 // ShortFormatsByLocale maps locales to the 'short' date formats for all
@@ -420,6 +450,9 @@ var ShortFormatsByLocale = map[Locale]string{
 	LocaleCsCZ: DefaultFormatCsCZShort,
 	LocaleUkUA: DefaultFormatUkUAShort,
 	LocaleLtLT: DefaultFormatLtLTShort,
+	LocaleHeIL: DefaultFormatHeILShort,
+	LocaleArAE: DefaultFormatArAEShort,
+	LocaleHiIN: DefaultFormatHiINShort,
 }
 
 // DateTimeFormatsByLocale maps locales to the 'DateTime' date formats for
@@ -461,6 +494,9 @@ var DateTimeFormatsByLocale = map[Locale]string{
 	LocaleCsCZ: DefaultFormatCsCZDateTime,
 	LocaleUkUA: DefaultFormatUkUADateTime,
 	LocaleLtLT: DefaultFormatLtLTDateTime,
+	LocaleHeIL: DefaultFormatHeILDateTime,
+	LocaleArAE: DefaultFormatArAEDateTime,
+	LocaleHiIN: DefaultFormatHiINDateTime,
 }
 
 // TimeFormatsByLocale maps locales to the 'Time' date formats for
@@ -502,4 +538,7 @@ var TimeFormatsByLocale = map[Locale]string{
 	LocaleCsCZ: DefaultFormatCsCZTime,
 	LocaleUkUA: DefaultFormatUkUATime,
 	LocaleLtLT: DefaultFormatLtLTTime,
+	LocaleHeIL: DefaultFormatHeILTime,
+	LocaleArAE: DefaultFormatArAETime,
+	LocaleHiIN: DefaultFormatHiINTime,
 }

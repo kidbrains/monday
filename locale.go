@@ -46,6 +46,9 @@ const (
 	LocaleCsCZ = "cs_CZ" // Czech (Czech Republic)
 	LocaleSlSI = "sl_SI" // Slovenian (Slovenia)
 	LocaleLtLT = "lt_LT" // Lithuanian (Lithuania)
+	LocaleHeIL = "he_IL" // Hebrew (Israel)
+	LocaleArAE = "ar_AE" // Arabic (United Arab Emirates)
+	LocaleHiIN = "hi_IN" // Hindi (India)
 )
 
 // ListLocales returns all locales supported by the package.
@@ -89,5 +92,8 @@ func ListLocales() []Locale {
 		LocaleCsCZ,
 		LocaleSlSI,
 		LocaleLtLT,
+		LocaleHeIL,
+		LocaleArAE,
+		LocaleHiIN,
 	}
 }
