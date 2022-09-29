@@ -122,7 +122,8 @@ const (
     LocaleHeIL = "he_IL" // Hebrew (Israel)
     LocaleArAE = "ar_AE" // Arabic (United Arab Emirates)
     LocaleHiIN = "hi_IN" // Hindi (India)
-    LocaleAzAZ = "az_AZ" // Azerbaijani
+    LocaleAzAZ = "az_AZ" // Azerbaijani (Azerbaijan)
+    LocaleViVN = "vi_VN" // Vietnamese (Vietnam)
 )
 ```
 
