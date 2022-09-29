@@ -50,6 +50,7 @@ const (
 	LocaleArAE = "ar_AE" // Arabic (United Arab Emirates)
 	LocaleHiIN = "hi_IN" // Hindi (India)
 	LocaleAzAZ = "az_AZ" // Azerbaijani (Azerbaijan)
+	LocaleViVN = "vi_VN" // Vietnamese (Vietnam)
 )
 
 // ListLocales returns all locales supported by the package.
@@ -97,5 +98,6 @@ func ListLocales() []Locale {
 		LocaleArAE,
 		LocaleHiIN,
 		LocaleAzAZ,
+		LocaleViVN,
 	}
 }

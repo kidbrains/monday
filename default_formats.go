@@ -284,6 +284,13 @@ const (
 	DefaultFormatAzAZShort    = "2.1.2006"
 	DefaultFormatAzAZDateTime = "2.1.2006 15:04"
 	DefaultFormatAzAZTime     = "15:04"
+
+	DefaultFormatViVNFull     = "Monday, ngày 2 January năm 2006" // Vietnamese (Vietnam)
+	DefaultFormatViVNLong     = "2 January, 2006"
+	DefaultFormatViVNMedium   = "2 Jan, 2006"
+	DefaultFormatViVNShort    = "2/1/2006"
+	DefaultFormatViVNDateTime = "15:04, 2/1/2006"
+	DefaultFormatViVNTime     = "15:04"
 )
 
 // FullFormatsByLocale maps locales to the'full' date formats for all
@@ -329,6 +336,7 @@ var FullFormatsByLocale = map[Locale]string{
 	LocaleArAE: DefaultFormatArAEFull,
 	LocaleHiIN: DefaultFormatHiINFull,
 	LocaleAzAZ: DefaultFormatAzAZFull,
+	LocaleViVN: DefaultFormatViVNFull,
 }
 
 // LongFormatsByLocale maps locales to the 'long' date formats for all
@@ -374,6 +382,7 @@ var LongFormatsByLocale = map[Locale]string{
 	LocaleArAE: DefaultFormatArAELong,
 	LocaleHiIN: DefaultFormatHiINLong,
 	LocaleAzAZ: DefaultFormatAzAZLong,
+	LocaleViVN: DefaultFormatViVNLong,
 }
 
 // MediumFormatsByLocale maps locales to the 'medium' date formats for all
@@ -419,6 +428,7 @@ var MediumFormatsByLocale = map[Locale]string{
 	LocaleArAE: DefaultFormatArAEMedium,
 	LocaleHiIN: DefaultFormatHiINMedium,
 	LocaleAzAZ: DefaultFormatAzAZMedium,
+	LocaleViVN: DefaultFormatViVNMedium,
 }
 
 // ShortFormatsByLocale maps locales to the 'short' date formats for all
@@ -464,6 +474,7 @@ var ShortFormatsByLocale = map[Locale]string{
 	LocaleArAE: DefaultFormatArAEShort,
 	LocaleHiIN: DefaultFormatHiINShort,
 	LocaleAzAZ: DefaultFormatAzAZShort,
+	LocaleViVN: DefaultFormatViVNShort,
 }
 
 // DateTimeFormatsByLocale maps locales to the 'DateTime' date formats for
@@ -509,6 +520,7 @@ var DateTimeFormatsByLocale = map[Locale]string{
 	LocaleArAE: DefaultFormatArAEDateTime,
 	LocaleHiIN: DefaultFormatHiINDateTime,
 	LocaleAzAZ: DefaultFormatAzAZDateTime,
+	LocaleViVN: DefaultFormatViVNDateTime,
 }
 
 // TimeFormatsByLocale maps locales to the 'Time' date formats for
@@ -554,4 +566,5 @@ var TimeFormatsByLocale = map[Locale]string{
 	LocaleArAE: DefaultFormatArAETime,
 	LocaleHiIN: DefaultFormatHiINTime,
 	LocaleAzAZ: DefaultFormatAzAZTime,
+	LocaleViVN: DefaultFormatViVNTime,
 }
