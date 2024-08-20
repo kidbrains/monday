@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	wordsRx        = regexp.MustCompile(`(\\p{L}+)`)
+	wordsRx        = regexp.MustCompile(`(\p{L}+)`)
 	debugLayoutDef = false
 )
 
@@ -321,6 +321,10 @@ func (ld *LocaleDetector) detectLocale(value string) Locale {
 	localesMap := make(map[Locale]int)
 	for _, v := range wordsRx.FindAllStringSubmatchIndex(value, -1) {
 		word := strings.ToLower(value[v[0]:v[1]])
+
+		if len(word) <= 1 {
+			continue
+		}
 
 		if localesSet, ok := ld.localeMap[word]; ok {
 			localesSet.Each(func(loc Locale) bool {

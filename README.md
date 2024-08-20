@@ -125,12 +125,12 @@ const (
     LocaleAzAZ = "az_AZ" // Azerbaijani (Azerbaijan)
     LocaleViVN = "vi_VN" // Vietnamese (Vietnam)
     LocaleEtEE = "et_EE" // Estonian (Estonia)
-	  LocaleHrHR = "hr_HR" // Croatian (Croatia)
-	  LocaleLvLV = "lv_LV" // Latvian (Latvia)
-	  LocaleSkSK = "sk_SK" // Slovak (Slovakia)
-	  LocaleThTH = "th_TH" // Thai (Thailand)
-	  LocaleUzUZ = "uz_UZ" // Uzbek (Uzbekistan)
-	  LocaleKkKZ = "kk_KZ" // Kazakh (Kazakhstan)
+    LocaleHrHR = "hr_HR" // Croatian (Croatia)
+    LocaleLvLV = "lv_LV" // Latvian (Latvia)
+    LocaleSkSK = "sk_SK" // Slovak (Slovakia)
+    LocaleThTH = "th_TH" // Thai (Thailand)
+    LocaleUzUZ = "uz_UZ" // Uzbek (Uzbekistan)
+    LocaleKkKZ = "kk_KZ" // Kazakh (Kazakhstan)
 )
 ```
 
