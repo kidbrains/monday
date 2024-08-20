@@ -4,13 +4,13 @@ Description
 Monday is a minimalistic translator for month and day of week names in time.Date objects. Supports 20+ different locales.
 Written in pure [Go](http://golang.org).
 
-![Go](https://github.com/goodsign/monday/workflows/Go/badge.svg)
+![Go](https://github.com/kidbrains/monday/workflows/Go/badge.svg)
 
 Installing
 ====
 
 ```
-go get github.com/goodsign/monday
+go get github.com/kidbrains/monday
 ```
 
 Usage
@@ -160,11 +160,12 @@ Monday Licence
 
 The **Monday** library is released under the [BSD Licence](http://opensource.org/licenses/bsd-license.php)
 
-[LICENCE file](https://github.com/goodsign/monday/blob/master/LICENCE)
+[LICENCE file](https://github.com/kidbrains/monday/blob/master/LICENCE)
 
 Thanks
 ==========
 
+* [Dmitry Bondarenko](https://github.com/goodsign)
 * [Martin Angers](https://github.com/PuerkitoBio)
 * Andrey Mirtchovski
 * [mikespook](https://github.com/mikespook)

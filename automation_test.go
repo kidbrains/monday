@@ -1,20 +1,15 @@
 package monday
 
-import (
-	// "fmt"
-	"testing"
-)
-
-type layoutData struct {
-	layout    string
-	matches   []string
-	unmatches []string
-	locales   []Locale
-}
+import "testing"
 
 var (
-	testingLayoutsData = []layoutData{
-		layoutData{
+	testingLayoutsData = []struct {
+		layout    string
+		matches   []string
+		unmatches []string
+		locales   []Locale
+	}{
+		{
 			layout: "Mon, 2 Jan 2006 15:4:5 -0700",
 			matches: []string{
 				"Нд, 22 Гру 2019 00:35:44 +0200",
@@ -36,7 +31,7 @@ var (
 				LocaleEnUS,
 			},
 		},
-		layoutData{
+		{
 			layout: "2006-01-02T15:04:05-07:00",
 			matches: []string{
 				"2019-12-22T00:35:44+02:00",
@@ -44,9 +39,14 @@ var (
 				"2016-01-26T00:10:21-03:00",
 				"2016-01-26T22:15:30+03:00",
 			},
-			locales: makeSingleLocalesArray(LocaleEnUS, 4),
+			locales: []Locale{
+				LocaleEnUS,
+				LocaleEnUS,
+				LocaleEnUS,
+				LocaleEnUS,
+			},
 		},
-		layoutData{
+		{
 			layout: "Пон, 2 Янв 2006 15:4:5 -0700",
 		},
 	}
@@ -113,12 +113,4 @@ func TestParsing(t *testing.T) {
 			}
 		}
 	}
-}
-
-func makeSingleLocalesArray(loc Locale, length int) []Locale {
-	result := make([]Locale, length)
-	for i := range result {
-		result[i] = loc
-	}
-	return result
 }
