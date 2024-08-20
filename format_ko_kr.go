@@ -83,7 +83,7 @@ func parseFuncKoCommon(locale Locale) internalParseFunc {
 		// knownPeriodsReverse has hash collisions
 		for k, v := range knownPeriodsReverse[locale] {
 			targetValue := strings.ToLower(v)
-			if strings.Index(layout, "PM") != -1 {
+			if strings.Contains(layout, "PM") {
 				targetValue = strings.ToUpper(v)
 			}
 			value = strings.Replace(value, k, targetValue, -1)

@@ -56,7 +56,7 @@ func commonFormatFunc(value, format string,
 			trimmedItem := strings.ToLower(v.item[foundIndex : len(v.item)-trimRight])
 
 			tr, ok := knw[trimmedItem]
-			if lowerCase == true {
+			if lowerCase {
 				tr = strings.ToLower(tr)
 			}
 
@@ -131,7 +131,7 @@ func commonGenitiveFormatFunc(value, format string,
 				sb.WriteString(v.item)
 				continue
 			}
-			if lowerCase == true {
+			if lowerCase {
 				tr = strings.ToLower(tr)
 			}
 			sb.WriteString(tr)
@@ -165,7 +165,7 @@ func createCommonParseFunc(locale Locale) internalParseFunc {
 	}
 }
 
-func createCommonParsetFuncWithGenitive(locale Locale) internalParseFunc {
+func createCommonParseFuncWithGenitive(locale Locale) internalParseFunc {
 	return func(layout, value string) (res string) {
 		return commonGenitiveFormatFunc(value, layout,
 			knownDaysShortReverse[locale], knownDaysLongReverse[locale],

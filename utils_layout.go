@@ -10,11 +10,12 @@ import (
 // This is an abstraction level above date raw character string of date representation.
 //
 // Example: "1  February / 2013" ->
-//           dateStringLayoutItem { item: "1",        isWord: true }
-//           dateStringLayoutItem { item: "  ",       isWord: false }
-//           dateStringLayoutItem { item: "February", isWord: true }
-//           dateStringLayoutItem { item: " / ",      isWord: false }
-//           dateStringLayoutItem { item: "2013",     isWord: true }
+//
+//	dateStringLayoutItem { item: "1",        isWord: true }
+//	dateStringLayoutItem { item: "  ",       isWord: false }
+//	dateStringLayoutItem { item: "February", isWord: true }
+//	dateStringLayoutItem { item: " / ",      isWord: false }
+//	dateStringLayoutItem { item: "2013",     isWord: true }
 type dateStringLayoutItem struct {
 	item    string
 	isWord  bool // true if this is a sequence of letters/digits (as opposed to a sequence of non-letters like delimiters)
@@ -74,7 +75,7 @@ func stringToLayoutItems(dateStr string) (seqs []dateStringLayoutItem) {
 	return
 }
 
-func layoutToString(li []dateStringLayoutItem) string {
+/* func layoutToString(li []dateStringLayoutItem) string {
 	// This function is expensive enough to be worth counting
 	// bytes and allocating all in one go.
 	numChars := 0
@@ -89,4 +90,4 @@ func layoutToString(li []dateStringLayoutItem) string {
 	}
 
 	return sb.String()
-}
+} // */

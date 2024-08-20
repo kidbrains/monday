@@ -53,6 +53,13 @@ var internalFormatFuncs = map[Locale]internalFormatFunc{
 	LocaleHiIN: createCommonFormatFunc(LocaleHiIN),
 	LocaleAzAZ: createCommonFormatFunc(LocaleAzAZ),
 	LocaleViVN: createCommonFormatFunc(LocaleViVN),
+	LocaleEtEE: createCommonFormatFunc(LocaleEtEE),
+	LocaleHrHR: createCommonFormatFunc(LocaleHrHR),
+	LocaleLvLV: createCommonFormatFunc(LocaleLvLV),
+	LocaleSkSK: createCommonFormatFunc(LocaleSkSK),
+	LocaleThTH: createCommonFormatFunc(LocaleThTH),
+	LocaleUzUZ: createCommonFormatFuncWithGenitive(LocaleUzUZ),
+	LocaleKkKZ: createCommonFormatFuncWithGenitive(LocaleKkKZ),
 }
 
 // internalParseFunc is a preprocessor for default time.ParseInLocation func
@@ -71,14 +78,14 @@ var internalParseFuncs = map[Locale]internalParseFunc{
 	LocaleFrMQ: createCommonParseFunc(LocaleFrFR),
 	LocaleFrGF: createCommonParseFunc(LocaleFrFR),
 	LocaleFrRE: createCommonParseFunc(LocaleFrFR),
-	LocaleRuRU: createCommonParsetFuncWithGenitive(LocaleRuRU),
-	LocaleFiFI: createCommonParsetFuncWithGenitive(LocaleFiFI),
+	LocaleRuRU: createCommonParseFuncWithGenitive(LocaleRuRU),
+	LocaleFiFI: createCommonParseFuncWithGenitive(LocaleFiFI),
 	LocaleDeDE: createCommonParseFunc(LocaleDeDE),
 	LocaleHuHU: createCommonParseFunc(LocaleHuHU),
 	LocaleItIT: createCommonParseFunc(LocaleItIT),
 	LocaleNnNO: createCommonParseFunc(LocaleNnNO),
 	LocaleNbNO: createCommonParseFunc(LocaleNbNO),
-	LocalePlPL: parseFuncPtCommon(LocalePlPL),
+	LocalePlPL: createCommonParseFunc(LocalePlPL),
 	LocalePtPT: parseFuncPtCommon(LocalePtPT),
 	LocalePtBR: parseFuncPtCommon(LocalePtBR),
 	LocaleRoRO: createCommonParseFunc(LocaleRoRO),
@@ -86,23 +93,30 @@ var internalParseFuncs = map[Locale]internalParseFunc{
 	LocaleCaES: createCommonParseFunc(LocaleCaES),
 	LocaleSvSE: createCommonParseFunc(LocaleSvSE),
 	LocaleTrTR: createCommonParseFunc(LocaleTrTR),
-	LocaleUkUA: createCommonParsetFuncWithGenitive(LocaleUkUA),
+	LocaleUkUA: createCommonParseFuncWithGenitive(LocaleUkUA),
 	LocaleBgBG: createCommonParseFunc(LocaleBgBG),
 	LocaleZhCN: parseFuncZhCommon(LocaleZhCN),
 	LocaleZhTW: parseFuncZhCommon(LocaleZhTW),
 	LocaleZhHK: parseFuncZhCommon(LocaleZhHK),
 	LocaleKoKR: parseFuncKoCommon(LocaleKoKR),
 	LocaleJaJP: parseFuncJaCommon(LocaleJaJP),
-	LocaleElGR: createCommonParsetFuncWithGenitive(LocaleElGR),
+	LocaleElGR: createCommonParseFuncWithGenitive(LocaleElGR),
 	LocaleIdID: createCommonParseFunc(LocaleIdID),
 	LocaleCsCZ: createCommonParseFunc(LocaleCsCZ),
 	LocaleSlSI: createCommonParseFunc(LocaleSlSI),
-	LocaleLtLT: createCommonParsetFuncWithGenitive(LocaleLtLT),
+	LocaleLtLT: createCommonParseFuncWithGenitive(LocaleLtLT),
 	LocaleHeIL: createCommonParseFunc(LocaleHeIL),
 	LocaleArAE: createCommonParseFunc(LocaleArAE),
 	LocaleHiIN: createCommonParseFunc(LocaleHiIN),
 	LocaleAzAZ: createCommonParseFunc(LocaleAzAZ),
 	LocaleViVN: createCommonParseFunc(LocaleViVN),
+	LocaleEtEE: createCommonParseFunc(LocaleEtEE),
+	LocaleHrHR: createCommonParseFunc(LocaleHrHR),
+	LocaleLvLV: createCommonParseFunc(LocaleLvLV),
+	LocaleSkSK: createCommonParseFunc(LocaleSkSK),
+	LocaleThTH: parseFuncThCommon(LocaleThTH),
+	LocaleUzUZ: createCommonParseFuncWithGenitive(LocaleUzUZ),
+	LocaleKkKZ: createCommonParseFuncWithGenitive(LocaleKkKZ),
 }
 
 var knownDaysShort = map[Locale]map[string]string{}           // Mapping for 'Format', days of week, short form
@@ -136,10 +150,10 @@ func fillKnownWords() {
 	fillKnownMonthsShort(shortMonthNamesEnUS, LocaleEnUS)
 
 	// En_GB: English (United Kingdom)
-	fillKnownDaysLong(longDayNamesEnUS, LocaleEnGB)
-	fillKnownDaysShort(shortDayNamesEnUS, LocaleEnGB)
-	fillKnownMonthsLong(longMonthNamesEnUS, LocaleEnGB)
-	fillKnownMonthsShort(shortMonthNamesEnUS, LocaleEnGB)
+	fillKnownDaysLong(longDayNamesEnGB, LocaleEnGB)
+	fillKnownDaysShort(shortDayNamesEnGB, LocaleEnGB)
+	fillKnownMonthsLong(longMonthNamesEnGB, LocaleEnGB)
+	fillKnownMonthsShort(shortMonthNamesEnGB, LocaleEnGB)
 
 	// Da_DK: Danish (Denmark)
 	fillKnownDaysLong(longDayNamesDaDK, LocaleDaDK)
@@ -361,6 +375,8 @@ func fillKnownWords() {
 	fillKnownDaysShort(shortDayNamesCsCZ, LocaleCsCZ)
 	fillKnownMonthsLong(longMonthNamesCsCZ, LocaleCsCZ)
 	fillKnownMonthsShort(shortMonthNamesCsCZ, LocaleCsCZ)
+	fillKnownMonthsGenitiveLong(longMonthNamesGenitiveCsCZ, LocaleCsCZ)
+	fillKnownMonthsGenitiveShort(shortMonthNamesGenitiveCsCZ, LocaleCsCZ)
 
 	// Sl_SI: Slovenian (Slovenia)
 	fillKnownDaysLong(longDayNamesSlSI, LocaleSlSI)
@@ -405,6 +421,52 @@ func fillKnownWords() {
 	fillKnownDaysShort(shortDayNamesViVN, LocaleViVN)
 	fillKnownMonthsLong(longMonthNamesViVN, LocaleViVN)
 	fillKnownMonthsShort(shortMonthNamesViVN, LocaleViVN)
+
+	// Et_EE: Estonian (Estonia)
+	fillKnownDaysLong(longDayNamesEtEE, LocaleEtEE)
+	fillKnownDaysShort(shortDayNamesEtEE, LocaleEtEE)
+	fillKnownMonthsLong(longMonthNamesEtEE, LocaleEtEE)
+	fillKnownMonthsShort(shortMonthNamesEtEE, LocaleEtEE)
+
+	// Hr_HR: Croatian (Croatia)
+	fillKnownDaysLong(longDayNamesHrHR, LocaleHrHR)
+	fillKnownDaysShort(shortDayNamesHrHR, LocaleHrHR)
+	fillKnownMonthsLong(longMonthNamesHrHR, LocaleHrHR)
+	fillKnownMonthsShort(shortMonthNamesHrHR, LocaleHrHR)
+
+	// Lv_LV: Latvian (Latvia)
+	fillKnownDaysLong(longDayNamesLvLV, LocaleLvLV)
+	fillKnownDaysShort(shortDayNamesLvLV, LocaleLvLV)
+	fillKnownMonthsLong(longMonthNamesLvLV, LocaleLvLV)
+	fillKnownMonthsShort(shortMonthNamesLvLV, LocaleLvLV)
+
+	// Sk_SK: Slovak (Slovakia)
+	fillKnownDaysLong(longDayNamesSkSK, LocaleSkSK)
+	fillKnownDaysShort(shortDayNamesSkSK, LocaleSkSK)
+	fillKnownMonthsLong(longMonthNamesSkSK, LocaleSkSK)
+	fillKnownMonthsShort(shortMonthNamesSkSK, LocaleSkSK)
+
+	// Th_TH: Thai (Thailand)
+	fillKnownDaysLong(longDayNamesThTH, LocaleThTH)
+	fillKnownDaysShort(shortDayNamesThTH, LocaleThTH)
+	fillKnownMonthsLong(longMonthNamesThTH, LocaleThTH)
+	fillKnownMonthsShort(shortMonthNamesThTH, LocaleThTH)
+
+	// Uz_UZ: Uzbek (Uzbekistan)
+	fillKnownDaysLong(longDayNamesUzUZ, LocaleUzUZ)
+	fillKnownDaysShort(shortDayNamesUzUZ, LocaleUzUZ)
+	fillKnownMonthsLong(longMonthNamesUzUZ, LocaleUzUZ)
+	fillKnownMonthsShort(shortMonthNamesUzUZ, LocaleUzUZ)
+	fillKnownMonthsGenitiveLong(longMonthNamesGenitiveUzUZ, LocaleUzUZ)
+	fillKnownMonthsGenitiveShort(shortMonthNamesGenitiveUzUZ, LocaleUzUZ)
+
+	// Kk_KZ: Kazakh (Kazakhstan)
+	fillKnownDaysLong(longDayNamesKkKZ, LocaleKkKZ)
+	fillKnownDaysShort(shortDayNamesKkKZ, LocaleKkKZ)
+	fillKnownMonthsLong(longMonthNamesKkKZ, LocaleKkKZ)
+	fillKnownMonthsShort(shortMonthNamesKkKZ, LocaleKkKZ)
+	fillKnownMonthsGenitiveLong(longMonthNamesGenitiveKkKZ, LocaleKkKZ)
+	fillKnownMonthsGenitiveShort(shortMonthNamesGenitiveKkKZ, LocaleKkKZ)
 }
 
 func fill(src map[string]string, dest map[Locale]map[string]string, locale Locale) {

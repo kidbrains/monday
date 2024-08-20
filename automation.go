@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	wordsRx        = regexp.MustCompile("(\\p{L}+)")
+	wordsRx        = regexp.MustCompile(`(\\p{L}+)`)
 	debugLayoutDef = false
 )
 
